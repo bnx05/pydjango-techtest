@@ -9,4 +9,4 @@ class ImageAdmin(admin.ModelAdmin):
 
 @admin.register(ImageLabel)
 class ImageLabelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('image', 'label')

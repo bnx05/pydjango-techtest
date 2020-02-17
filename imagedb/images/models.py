@@ -14,3 +14,6 @@ class ImageLabel(models.Model):
     image = models.ForeignKey(Image, related_name='labels', on_delete=models.CASCADE)
     label = models.CharField(max_length=255, db_index=True)
     confidence = models.FloatField(blank=True, null=True)
+
+    def __str__(self):
+        return self.label

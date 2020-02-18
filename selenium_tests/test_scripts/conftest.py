@@ -6,7 +6,7 @@ from selenium import webdriver
 
 from page_objects.admin_login_page import AdminLoginPage
 
-ADMIN_LOGIN_URL = os.getenv('ADMIN_LOGIN_URL', 'http://127.0.0.1:8000/admin/login')
+ADMIN_LOGIN_URL = os.getenv('ADMIN_LOGIN_URL', 'http://localhost:8000/admin/login')
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
 

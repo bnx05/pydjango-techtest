@@ -7,12 +7,14 @@ The following tasks are covered in this repo:
 
 1. Implement these user stories:
   - As a user, I should be able to upload an image with multiple labels.
- - As a user, I should be able to list all uploaded images with their correct labels.
+  - As a user, I should be able to list all uploaded images with their correct labels.
 
 2. Fix this bug:
   - As a user, I should be able to indicate labels for an image without needing to provide the confidence.
 
 3. Create at least one UI test and one API test.
+
+Comments have been provided inside `models.py` and `admin.py` to highlight the answers for tasks 1 and 2.
 
 
 Setup

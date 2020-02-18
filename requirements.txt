@@ -1,5 +1,8 @@
 asgiref==3.2.3
 Django==3.0.3
 Pillow==7.0.0
+pytest==5.3.5
 pytz==2019.3
+PyVirtualDisplay==0.2.5
+selenium==3.141.0
 sqlparse==0.3.0

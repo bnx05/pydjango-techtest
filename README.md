@@ -31,15 +31,15 @@ Setup
 		pip  install -r requirements.txt
 
 4. The selenium tests are also housed in this repository.  At a minimum, `chromedriver` should be installed for the tests to run using the default browser which is Chrome.
-	4.1. Download `chromedriver` from [here]([https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)).
-	 4.2. Run `sudo apt-get install unzip` if unzip isn't installed yet, then unzip `chromedriver` at the desired location, e.g. `unzip ~/Downloads/chromedriver_linux64.zip -d /usr/bin`. 
-	4.3. Add the location to `PATH` if not there yet.
+  * Download `chromedriver` from [here]([https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)).
+  * Run `sudo apt-get install unzip` if unzip isn't installed yet, then unzip `chromedriver` at the desired location, e.g. `unzip ~/Downloads/chromedriver_linux64.zip -d /usr/bin`. 
+  * Add the location to `PATH` if not there yet.
 
 5. Install `geckodriver` if you wish to run the Selenium tests using Firefox.
-	5.1 Download `geckodriver` from [here]([https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases)).
-	5.2 Extract the file by running `tar -xvzf geckodriver*`.
-	5.3 Make it executable `chmod +x geckodriver`.
-	5.4 Add the driver to the `PATH` .
+  * Download `geckodriver` from [here]([https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases)).
+  * Extract the file by running `tar -xvzf geckodriver*`.
+  * Make it executable `chmod +x geckodriver`.
+  * Add the driver to the `PATH` .
 
 ### Database setup
 

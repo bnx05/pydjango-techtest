@@ -1,11 +1,18 @@
-Assignar Python/Django Tech Test
-================================
+Answers to Assignar Python/Django Tech Test
+===========================================
 
-This is a base project for technical tests we use in our hiring process.
+This repository contains answers to Assignar's technical test for the Junior Level Dev / Mid QA role.
 
-The actual technical tasks and challenges are not included in this repo 
-so that we are able to customise the tasks/challenges according to the 
-roles we are looking for.    
+The following tasks are covered in this repo:
+
+1. Implement these user stories:
+  - As a user, I should be able to upload an image with multiple labels.
+ - As a user, I should be able to list all uploaded images with their correct labels.
+
+2. Fix this bug:
+  - As a user, I should be able to indicate labels for an image without needing to provide the confidence.
+
+3. Create at least one UI test and one API test.
 
 
 Setup
@@ -13,16 +20,33 @@ Setup
 
 ### Installation
 
-This project is a very minimal Python setup. You are free to set 
-it up locally in your own way (`virtualenv`, `venv`, `pyenv`, `poetry`, 
-Docker, etc.). 
+1. Please make sure that Python is installed in your machine and the version is at least 3.6. f-strings are used in the code and will not work on older versions of Python. Download Python [here](https://www.python.org/downloads/).
+
+2. Create a virtual environment for this project (using `venv`, `virtualenv`) and activate it by running
+
+		source virtualenv_name/bin/activate	
+
+3. Install requisites by running
+
+		pip  install -r requirements.txt
+
+4. The selenium tests are also housed in this repository.  At a minimum, `chromedriver` should be installed for the tests to run using the default browser which is Chrome.
+	4.1. Download `chromedriver` from [here]([https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)).
+	 4.2. Run `sudo apt-get install unzip` if unzip isn't installed yet, then unzip `chromedriver` at the desired location, e.g. `unzip ~/Downloads/chromedriver_linux64.zip -d /usr/bin`. 
+	4.3. Add the location to `PATH` if not there yet.
+
+5. Install `geckodriver` if you wish to run the Selenium tests using Firefox.
+	5.1 Download `geckodriver` from [here]([https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases)).
+	5.2 Extract the file by running `tar -xvzf geckodriver*`.
+	5.3 Make it executable `chmod +x geckodriver`.
+	5.4 Add the driver to the `PATH` .
 
 ### Database setup
 
-Setup your initial database (SQLite).
-    
+Setup the database and run migrations.
+
     $ ./manage.py migrate
-    
+
 Create your first superuser.
 
     $ ./manage.py createsuperuser
@@ -32,25 +56,27 @@ Load initial seed data.
     $ ./manage.py loaddata images
 
 Development
------------
+----------------
 
 ### Running the server
 
     $ ./manage.py runserver
 
+### Running the selenium tests
 
-Project Information
--------------------
+Create environment variables for the Django admin username and password. 
 
-This is a Django example project (`imagedb`) that includes one Django 
-app called `images`.
+	$ export USERNAME=yourusername
+	$ export PASSWORD=yourpassword
 
-The `images` app uses two models, `Image` and `ImageLabel`.
+If you want to run the tests using headless Chrome, create this environment variable first.
 
-* `Image` - refers to an image that you can upload/download.
-* `ImageLabel` - refers to a label of an object inside the image.
+	$ export HEADLESS=True
 
-An `Image` can have multiple `ImageLabel`s. An `ImageLabel` belongs to 
-only one `Image`.
+If you prefer to use Firefox, do
 
-A basic Django admin page is available at http://localhost:8000/admin. 
+	$ export BROWSER=firefox
+
+Run the tests using `pytest`.
+
+	$ pytest selenium_tests/test_scripts/ -sv

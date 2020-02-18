@@ -1,4 +1,5 @@
 from time import time
+
 from django.db import models
 
 
@@ -8,6 +9,9 @@ def user_directory_path(_, filename):
 
 class Image(models.Model):
     image = models.ImageField(upload_to=user_directory_path)
+
+    def __str__(self):
+        return str(self.image).split("/")[-1]
 
 
 class ImageLabel(models.Model):
